@@ -1,0 +1,9 @@
+declare
+  cursor CR_CIDADE(pUF UF.CD_UF%TYPE) is
+         SELECT * FROM CIDADE WHERE CD_UF = pUF; 
+begin
+   FOR ST_CIDADE IN CR_CIDADE('CE') LOOP   
+     DBMS_OUTPUT.PUT_LINE(ST_CIDADE.DS_CIDADE||'-'||ST_CIDADE.CD_UF);
+   END LOOP;
+
+end;
